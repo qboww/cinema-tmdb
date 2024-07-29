@@ -1,0 +1,60 @@
+.aboutText {
+  font-size: 18px;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.514);
+}
+
+.title {
+  font-size: 36px;
+  margin-top: 30px;
+  margin-bottom: 16px;
+}
+
+.description {
+  margin-bottom: 8px;
+}
+
+.link {
+  text-decoration: underline;
+  color: #00aaff;
+  transition: color 0.3s;
+}
+
+.link:hover {
+  color: #ffaa00;
+}
+
+.searchContainer {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.searchInput {
+  flex-grow: 1;
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
+  font-size: 16px;
+}
+
+.searchButton {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #00aaff;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.searchButton:hover {
+  background-color: #ffaa00;
+}
+
+@media screen and (min-width: 768px) {
+  .title {
+    margin-top: 30px;
+  }
+}

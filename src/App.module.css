@@ -1,0 +1,72 @@
+.appContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.contentContainer {
+  flex: 1;
+  max-width: 375px;
+  padding: 16px;
+  margin: 0 auto;
+}
+
+.footer {
+  background-color: #1c1c1c;
+  color: #ffffff;
+  padding: 20px 0;
+  border-top: 1px solid rgba(128, 128, 128, 0.514);
+}
+
+.footer .container {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.footerSection {
+  flex: 1 1 calc(33.333% - 40px);
+  margin: 10px 20px;
+}
+
+.footerHeader {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footerLinks {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footerLinks li {
+  margin-bottom: 5px;
+}
+
+.footerLinks a {
+  color: #00aaff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footerLinks a:hover {
+  color: #ffaa00;
+}
+
+@media screen and (min-width: 768px) {
+  .contentContainer {
+    max-width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .contentContainer {
+    max-width: 1440px;
+  }
+}

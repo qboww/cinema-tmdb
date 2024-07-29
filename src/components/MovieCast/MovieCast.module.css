@@ -1,0 +1,73 @@
+.imagesContainer {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #1c1c1c;
+  border-radius: 8px;
+  color: #ffffff;
+}
+
+.header {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.castList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+}
+
+.castItem {
+  display: flex;
+  align-items: center;
+  background-color: #292929;
+  border-radius: 8px;
+  padding: 16px;
+  width: 100%;
+  max-width: 400px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.img {
+  border-radius: 8px;
+  max-width: 75px;
+  margin-right: 16px;
+}
+
+.noImagePlaceholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #444;
+  width: 75px;
+  height: 112.5px;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 12px;
+  text-align: center;
+  margin-right: 16px;
+}
+
+.actorDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+.actorName {
+  font-size: 18px;
+  margin: 0;
+  margin-bottom: 8px;
+}
+
+.characterName, .actorPopularity {
+  font-size: 14px;
+  margin: 0;
+}
+
+@media screen and (min-width: 1440px) {
+  .castItem {
+    width: calc(50% - 16px);
+  }
+}

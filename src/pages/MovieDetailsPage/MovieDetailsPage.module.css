@@ -1,0 +1,156 @@
+.container {
+  background-color: #1c1c1c;
+  padding: 20px;
+  border-radius: 8px;
+  color: #ffffff;
+}
+
+.detailsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.imageContainer img {
+  max-width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.infoContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.dataTextContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.header {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.overviewSection,
+.statisticsSection,
+.genresSection {
+  background-color: #292929;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.overview {
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.statisticsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.genresSection {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.genreBadges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  cursor: pointer;
+}
+
+.genreBadge {
+  background-color: #00aaff;
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 14px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  transition:
+    background-color 0.3s,
+    transform 0.3s;
+}
+
+.genreBadge:hover {
+  background-color: #ffaa00;
+  transform: translateY(-2px);
+}
+
+.navContainer {
+  margin-top: 30px;
+}
+
+.linksContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.514);
+  padding-bottom: 16px;
+  margin-bottom: 30px;
+}
+
+.links {
+  display: flex;
+  gap: 30px;
+}
+
+.navLink {
+  font-size: 18px;
+  text-decoration: none;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.navLink:hover,
+.navLink.active {
+  color: #00aaff;
+}
+
+.goBack {
+  font-size: 18px;
+  text-decoration: none;
+  color: #00aaff;
+  background-color: #292929;
+  padding: 10px 20px;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.goBack:hover {
+  background-color: #1c1c1c;
+}
+
+@media screen and (min-width: 768px) {
+  .detailsContainer {
+    flex-wrap: nowrap;
+  }
+
+  .imageContainer img {
+    width: 350px;
+    height: 500px;
+    object-fit: cover;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .navContainer {
+    flex-direction: row;
+  }
+}
