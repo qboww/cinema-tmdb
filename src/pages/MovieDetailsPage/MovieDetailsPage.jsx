@@ -4,6 +4,7 @@ import { useRef } from "react";
 import Loader from "../../components/Loader/Loader";
 import useTmdbApi from "../../hooks/useTmdbApi";
 import { Toaster } from "react-hot-toast";
+import clsx from "clsx";
 import css from "./MovieDetailsPage.module.css";
 
 const MovieDetailsPage = () => {
@@ -44,22 +45,53 @@ const MovieDetailsPage = () => {
               <h3 className={css.header}>Overview</h3>
               <p className={css.overview}>{movie.overview}</p>
             </div>
-            <div className={css.statisticsSection}>
-              <h3 className={css.header}>Statistics</h3>
-              <ul className={css.statisticsList}>
-                <li>Release date: {movie.release_date}</li>
-                <li>Vote average: {movie.vote_average}</li>
-                <li>Votes: {movie.vote_count}</li>
-              </ul>
+            <div className={css.statGenCont}>
+              <div className={css.statisticsSection}>
+                <h3 className={css.header}>Statistics</h3>
+                <ul className={css.statisticsList}>
+                  <li>Release date: {movie.release_date}</li>
+                  <li>Vote average: {movie.vote_average}</li>
+                  <li>Votes: {movie.vote_count}</li>
+                </ul>
+              </div>
+              <div className={css.genresSection}>
+                <h3 className={css.header}>Genres</h3>
+                <div className={css.genreBadges}>
+                  {movie.genres.map((genre) => (
+                    <span key={genre.id} className={css.genreBadge}>
+                      {genre.name}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
-            <div className={css.genresSection}>
-              <h3 className={css.header}>Genres</h3>
-              <div className={css.genreBadges}>
-                {movie.genres.map((genre) => (
-                  <span key={genre.id} className={css.genreBadge}>
-                    {genre.name}
-                  </span>
-                ))}
+            <div className={css.genreAvCont}>
+              <div className={`${css.genresSection}  ${css.badgesExt}`}>
+                <div>
+                  <h3 className={css.header}>Pricing</h3>
+                  <div className={css.priceCont}>
+                    <div className={`${css.genreBadges}`}>
+                      <p>Price in US:</p>
+                      <span className={css.genreBadge}>
+                        ${parseInt(movie.budget.toString().substring(0, 2))}
+                      </span>
+                    </div>
+                    <button>
+                      Purchase for ${parseInt(movie.budget.toString().substring(0, 2))}
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <div className={css.genresSection}>
+                <h3 className={css.header}>Availabilty</h3>
+                <span
+                  className={clsx(
+                    css.genreBadge,
+                    movie.budget > 1000000 ? css.available : css.notAvailable,
+                  )}
+                >
+                  {movie.budget > 1000000 ? "Available" : "Not available"}
+                </span>
               </div>
             </div>
           </div>
@@ -80,8 +112,7 @@ const MovieDetailsPage = () => {
             Go Back
           </Link>
         </div>
-        {/* Navigate to the cast route by default */}
-        {location.pathname === `/movies/${movieId}` && <Navigate to="cast" replace />}
+        {location.pathname === `/movies/${movieId}`}
         <Outlet />
       </nav>
 
