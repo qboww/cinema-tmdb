@@ -3,7 +3,7 @@ import { Link, NavLink, Outlet, useParams, useLocation, Navigate } from "react-r
 import { useRef } from "react";
 import Loader from "../../components/Loader/Loader";
 import useTmdbApi from "../../hooks/useTmdbApi";
-import { Toaster } from "react-hot-toast";
+import { Toaster, toast } from "react-hot-toast";
 import clsx from "clsx";
 import css from "./MovieDetailsPage.module.css";
 
@@ -27,6 +27,21 @@ const MovieDetailsPage = () => {
 
     fetchData();
   }, [fetchMovieById, movieId]);
+
+  const handlePurchase = () => {
+    const price = parseInt(movie.budget.toString().substring(0, 2));
+    
+    toast.success(`Successfully purchased "${movie.title}" for $${price}!`, {
+      duration: 4000,
+      position: "top-right",
+      style: {
+        background: '#4CAF50',
+        color: '#fff',
+        fontWeight: 'bold',
+      },
+      icon: '🎬',
+    });
+  };
 
   if (!movie) {
     return <Loader />;
@@ -76,7 +91,7 @@ const MovieDetailsPage = () => {
                         ${parseInt(movie.budget.toString().substring(0, 2))}
                       </span>
                     </div>
-                    <button>
+                    <button onClick={handlePurchase}>
                       Purchase for ${parseInt(movie.budget.toString().substring(0, 2))}
                     </button>
                   </div>
